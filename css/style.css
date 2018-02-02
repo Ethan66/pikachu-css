@@ -34,3 +34,31 @@ body{
 .wrap .face.right{
     left: 50%; margin-left: 116px;
 }
+.wrap .upperLip{
+    width: 80px; height: 23px;
+    border: 3px solid #000; border-top: none; background: #fee433;
+    position: absolute; top: 46px;
+}
+.wrap .upperLip.left{
+    border-right: none; border-bottom-left-radius: 40px 20px;
+    right: 50%; transform: rotate(-20deg);
+}
+.wrap .upperLip.right{
+    border-left: none; border-bottom-right-radius: 40px 20px;
+    left: 50%; transform: rotate(20deg);
+}
+.wrap .lowerLip-wrap{
+    width: 200px; height: 110px;
+    position: absolute; bottom: 0; left: 50%; transform: translate(-50%); z-index: -1;
+    overflow: hidden;
+}
+.wrap .lowerLip{
+    width: 200px; height: 3500px; border-radius: 100px/490px; border: 3px solid #000;
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    background: #990513; overflow: hidden;
+}
+.wrap .lowerLip:after{
+    display: block; content: ''; width: 100px; height: 100px; background: #fc4a62;
+    border-radius: 50%;
+    position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+}
