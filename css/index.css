@@ -1,0 +1,64 @@
+#preview{
+    height: 100vh; background: #fee433; display: flex; justify-content: center; align-items: center;
+}
+#preview .wrap{
+    width: 100%; height: 165px; position: relative;
+}
+#preview .nose{
+    width: 0; height: 0;
+    border-style: solid; border-width: 10px 11px; border-color: #000 transparent transparent transparent; border-radius: 11px;
+    position: absolute; left: 50%; top: 28px; transform: translateX(-50%);
+}
+#preview .eye{
+    width: 49px; height: 49px; background: #2e2e2e;
+    position: absolute; top: 10px;
+    border-radius: 50%; border: 2px solid #000;
+}
+#preview .eye:before{
+    display: block; content: ''; width: 24px; height: 24px; border-radius: 50%;
+    background: #fff; position: absolute; left: 6px; top: -1px; border: 2px solid #000;
+}
+#preview .eye.left{
+    right: 50%; margin-right: 90px;
+}
+#preview .eye.right{
+    left: 50%; margin-left: 90px;
+}
+#preview .face{
+    width: 68px; height:68px; background: #fc0d1c;
+    border: 2px solid #000; border-radius: 50%; position: absolute; top: 85px;
+}
+#preview .face.left{
+    right: 50%; margin-right: 116px;
+}
+#preview .face.right{
+    left: 50%; margin-left: 116px;
+}
+#preview .upperLip{
+    width: 80px; height: 23px;
+    border: 3px solid #000; border-top: none; background: #fee433;
+    position: absolute; top: 46px;
+}
+#preview .upperLip.left{
+    border-right: none; border-bottom-left-radius: 40px 20px;
+    right: 50%; transform: rotate(-20deg);
+}
+#preview .upperLip.right{
+    border-left: none; border-bottom-right-radius: 40px 20px;
+    left: 50%; transform: rotate(20deg);
+}
+#preview .lowerLip-wrap{
+    width: 200px; height: 110px;
+    position: absolute; bottom: 0; left: 50%; transform: translate(-50%);
+    overflow: hidden;
+}
+#preview .lowerLip{
+    width: 200px; height: 3500px; border-radius: 100px/490px; border: 3px solid #000;
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    background: #990513; overflow: hidden;
+}
+#preview .lowerLip:after{
+    display: block; content: ''; width: 100px; height: 100px; background: #fc4a62;
+    border-radius: 50%;
+    position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
+}
