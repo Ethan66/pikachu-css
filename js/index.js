@@ -1,9 +1,26 @@
 !function(){
     function writeCode(prefix, code, fn){
+        let duration = 50
+        $(".actions").on("click","button",function(e){
+            let $button = $(e.currentTarget)
+            let speed = $button.attr("data-speed")
+            console.log(speed)
+            $button.addClass("active").siblings().removeClass("active")
+            switch(speed) {
+                case 'slow':
+                    duration = 100
+                    break
+                case 'normal':
+                    duration = 50
+                    break
+                case 'fast':
+                    duration = 10
+            }
+        })
         let container = document.querySelector("#code")
         let styleTag = document.querySelector("#styleCode")
         let n = 1
-        let id = setInterval(function(){
+        /*let id = setInterval(function(){
             container.innerHTML = code.substr(0,n)
             styleTag.innerHTML = code.substr(0,n)
             container.scrollTop = container.scrollHeight
@@ -11,7 +28,18 @@
             if(n > code.length) {
                 clearInterval(id)
             }
-        },10)
+        },20)*/
+        let id = setTimeout(function run(){
+            container.innerHTML = code.substr(0,n)
+            styleTag.innerHTML = code.substr(0,n)
+            container.scrollTop = container.scrollHeight
+            n+=1
+            if(n < code.length) {
+                setTimeout(run,duration)
+            } else {
+                clearInterval(id)
+            }
+        },duration)
     }
     let code = '/*首先，需要准备皮卡丘的皮*/\n' +
         '#preview {\n' +
@@ -151,10 +179,5 @@
         '}\n'
     writeCode('',code);
 
-    $(".actions").on("click","button",function(e){
-        let $button = $(e.currentTarget)
-        let speed = $button.attr("data-speed")
-        console.log(speed)
-        $button.addClass("active").siblings().removeClass("active")
-    })
+
 }.call();
